@@ -1,8 +1,28 @@
 {
   "version": "1.0",
-  "totalImages": 1,
-  "generatedDate": "2025-12-31T04:08:29.385Z",
+  "totalImages": 2,
+  "generatedDate": "2025-12-31T04:17:34.621Z",
   "images": [
+    {
+      "id": "3d2d8891949f4f878edd1a0ff97c902e",
+      "filename": "memory.png",
+      "name": "memory",
+      "description": "another one",
+      "path": "user-content/images/other/2025/12/3d2d8891949f4f878edd1a0ff97c902e.png",
+      "webpPath": "user-content/images/other/2025/12/3d2d8891949f4f878edd1a0ff97c902e.webp",
+      "category": "other",
+      "tags": [
+        "another"
+      ],
+      "dimensions": {
+        "width": 2048,
+        "height": 1152
+      },
+      "filesize": 4008283,
+      "uploadedBy": "BenDol",
+      "uploadDate": "2025-12-31T04:17:18.961Z",
+      "format": "png"
+    },
     {
       "id": "7c3034afc77c4aada8c93b38beca9b2f",
       "filename": "d4u8fbo-bbb3203b-9939-4db8-baff-96aa56bb9ef7.jpg",
@@ -26,6 +46,7 @@
   ],
   "byCategory": {
     "other": [
+      "3d2d8891949f4f878edd1a0ff97c902e",
       "7c3034afc77c4aada8c93b38beca9b2f"
     ]
   }
