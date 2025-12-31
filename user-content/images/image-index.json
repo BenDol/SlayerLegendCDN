@@ -1,7 +1,34 @@
 {
   "version": "1.0",
-  "totalImages": 0,
-  "generatedDate": "2025-12-31T07:42:19.823Z",
-  "images": [],
-  "byCategory": {}
+  "totalImages": 1,
+  "generatedDate": "2025-12-31T07:44:04.441Z",
+  "images": [
+    {
+      "id": "995e5ddfd358409bb17610befb860f38",
+      "filename": "unnamed (1).webp",
+      "name": "Slayer Volcano",
+      "description": "Slayer in a Volcano WOW!",
+      "path": "user-content/images/other/2025/12/995e5ddfd358409bb17610befb860f38.webp",
+      "webpPath": "user-content/images/other/2025/12/995e5ddfd358409bb17610befb860f38.webp",
+      "category": "other",
+      "tags": [
+        "slayer",
+        "background",
+        "art"
+      ],
+      "dimensions": {
+        "width": 526,
+        "height": 296
+      },
+      "filesize": 24650,
+      "uploadedBy": "BenDol",
+      "uploadDate": "2025-12-31T07:43:47.022Z",
+      "format": "webp"
+    }
+  ],
+  "byCategory": {
+    "other": [
+      "995e5ddfd358409bb17610befb860f38"
+    ]
+  }
 }
