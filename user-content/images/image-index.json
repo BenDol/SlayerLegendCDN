@@ -1,8 +1,28 @@
 {
   "version": "1.0",
-  "totalImages": 1,
-  "generatedDate": "2025-12-31T04:46:48.085Z",
+  "totalImages": 2,
+  "generatedDate": "2025-12-31T04:47:13.502Z",
   "images": [
+    {
+      "id": "1a2179825191482cac2500e8cb169068",
+      "filename": "hyperchad.png",
+      "name": "hyperchad",
+      "description": "Test test",
+      "path": "user-content/images/companions/2025/12/1a2179825191482cac2500e8cb169068.png",
+      "webpPath": "user-content/images/companions/2025/12/1a2179825191482cac2500e8cb169068.webp",
+      "category": "companions",
+      "tags": [
+        "Test"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1536
+      },
+      "filesize": 3942443,
+      "uploadedBy": "BenDol",
+      "uploadDate": "2025-12-31T04:46:58.363Z",
+      "format": "png"
+    },
     {
       "id": "b8b13a72738449e3b6a186988c3bf825",
       "filename": "d4u8fbo-bbb3203b-9939-4db8-baff-96aa56bb9ef7.jpg",
@@ -25,6 +45,9 @@
     }
   ],
   "byCategory": {
+    "companions": [
+      "1a2179825191482cac2500e8cb169068"
+    ],
     "bosses": [
       "b8b13a72738449e3b6a186988c3bf825"
     ]
