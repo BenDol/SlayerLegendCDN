@@ -1,0 +1,42 @@
+name: Generate Image Index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'user-content/images/**/*.json'
+      - 'user-content/images/**/*.jpg'
+      - 'user-content/images/**/*.jpeg'
+      - 'user-content/images/**/*.png'
+      - 'user-content/images/**/*.webp'
+      - 'user-content/images/**/*.gif'
+  workflow_dispatch:
+
+jobs:
+  generate-index:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install sharp glob
+
+      - name: Generate image index
+        run: node scripts/generate-image-index.js
+
+      - name: Commit and push index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add user-content/images/image-index.json
+          git diff --quiet && git diff --staged --quiet || \
+            (git commit -m "Update image index [skip ci]" && git push)
