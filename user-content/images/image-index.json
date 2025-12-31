@@ -1,8 +1,29 @@
 {
   "version": "1.0",
-  "totalImages": 2,
-  "generatedDate": "2025-12-31T04:17:34.621Z",
+  "totalImages": 3,
+  "generatedDate": "2025-12-31T04:26:08.084Z",
   "images": [
+    {
+      "id": "dadf70b2ad43403aaae96194aff2dc3d",
+      "filename": "503d29ad82303bc8e9bebd469a96a521.png",
+      "name": "503d29ad82303bc8e9bebd469a96a521",
+      "description": "Test test",
+      "path": "user-content/images/companions/2025/12/dadf70b2ad43403aaae96194aff2dc3d.png",
+      "webpPath": "user-content/images/companions/2025/12/dadf70b2ad43403aaae96194aff2dc3d.webp",
+      "category": "companions",
+      "tags": [
+        "test",
+        "bonfyre"
+      ],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 21997,
+      "uploadedBy": "BenDol",
+      "uploadDate": "2025-12-31T04:25:51.831Z",
+      "format": "png"
+    },
     {
       "id": "3d2d8891949f4f878edd1a0ff97c902e",
       "filename": "memory.png",
@@ -45,6 +66,9 @@
     }
   ],
   "byCategory": {
+    "companions": [
+      "dadf70b2ad43403aaae96194aff2dc3d"
+    ],
     "other": [
       "3d2d8891949f4f878edd1a0ff97c902e",
       "7c3034afc77c4aada8c93b38beca9b2f"
