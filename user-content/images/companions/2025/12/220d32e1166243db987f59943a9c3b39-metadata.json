@@ -1,0 +1,18 @@
+{
+  "name": "hyperchad",
+  "description": "Test test test",
+  "category": "companions",
+  "tags": [
+    "test"
+  ],
+  "dimensions": {
+    "width": 1024,
+    "height": 1536
+  },
+  "uploadedBy": "BenDol",
+  "uploadedAt": "2025-12-31T04:30:03.337Z",
+  "uploadDate": "2025-12-31T04:30:03.337Z",
+  "filename": "hyperchad.png",
+  "fileSize": 3942443,
+  "format": "png"
+}
