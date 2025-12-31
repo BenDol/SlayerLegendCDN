@@ -1,8 +1,29 @@
 {
   "version": "1.0",
-  "totalImages": 1,
-  "generatedDate": "2025-12-31T07:44:04.441Z",
+  "totalImages": 2,
+  "generatedDate": "2025-12-31T08:15:46.883Z",
   "images": [
+    {
+      "id": "64f84b65d55049a791cfe63323dd4432",
+      "filename": "signal-2025-12-28-020334.png",
+      "name": "Bonfyre Avatar",
+      "description": "",
+      "path": "user-content/images/characters/2025/12/64f84b65d55049a791cfe63323dd4432.png",
+      "webpPath": "user-content/images/characters/2025/12/64f84b65d55049a791cfe63323dd4432.webp",
+      "category": "characters",
+      "tags": [
+        "owner",
+        "drip"
+      ],
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "filesize": 148676,
+      "uploadedBy": "BenDol",
+      "uploadDate": "2025-12-31T08:15:31.108Z",
+      "format": "png"
+    },
     {
       "id": "995e5ddfd358409bb17610befb860f38",
       "filename": "unnamed (1).webp",
@@ -27,6 +48,9 @@
     }
   ],
   "byCategory": {
+    "characters": [
+      "64f84b65d55049a791cfe63323dd4432"
+    ],
     "other": [
       "995e5ddfd358409bb17610befb860f38"
     ]
