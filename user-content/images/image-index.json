@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 2,
-  "generatedDate": "2025-12-31T08:15:46.883Z",
+  "totalImages": 3,
+  "generatedDate": "2025-12-31T20:25:59.060Z",
   "images": [
+    {
+      "id": "29f69bf1c244423387a3a4ddcbec2947",
+      "filename": "Screenshot 2025-12-31 152345.png",
+      "name": "icon_growth08_1.png",
+      "description": "",
+      "path": "user-content/images/characters/2025/12/29f69bf1c244423387a3a4ddcbec2947.png",
+      "webpPath": "user-content/images/characters/2025/12/29f69bf1c244423387a3a4ddcbec2947.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 67,
+        "height": 66
+      },
+      "filesize": 5305,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2025-12-31T20:25:44.256Z",
+      "format": "png"
+    },
     {
       "id": "64f84b65d55049a791cfe63323dd4432",
       "filename": "signal-2025-12-28-020334.png",
@@ -49,6 +67,7 @@
   ],
   "byCategory": {
     "characters": [
+      "29f69bf1c244423387a3a4ddcbec2947",
       "64f84b65d55049a791cfe63323dd4432"
     ],
     "other": [
