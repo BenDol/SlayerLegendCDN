@@ -54,8 +54,8 @@ jobs:
           echo "=========================================="
           echo ""
 
-          # Convert cutoff date to timestamp
-          CUTOFF_TIMESTAMP=$(date -d "$CUTOFF_DATE" +%s)
+          # Convert cutoff date to timestamp (end of day - 23:59:59)
+          CUTOFF_TIMESTAMP=$(date -d "$CUTOFF_DATE 23:59:59" +%s)
 
           if [ -z "$CUTOFF_TIMESTAMP" ]; then
             echo "❌ ERROR: Invalid date format. Use YYYY-MM-DD"

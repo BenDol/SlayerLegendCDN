@@ -23,7 +23,7 @@ Go to: `https://github.com/BenDol/SlayerLegendCDN/actions/workflows/purge-old-im
 **cutoff_date** (required)
 - Format: `YYYY-MM-DD`
 - Example: `2025-01-01`
-- Deletes all images uploaded **before** this date
+- Deletes all images uploaded **on or before** this date (inclusive, up to 23:59:59)
 
 **dry_run** (optional, default: `true`)
 - `true`: Preview what would be deleted (no actual deletion)
