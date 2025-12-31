@@ -1,7 +1,32 @@
 {
   "version": "1.0",
-  "totalImages": 0,
-  "generatedDate": "2025-12-31T04:48:36.047Z",
-  "images": [],
-  "byCategory": {}
+  "totalImages": 1,
+  "generatedDate": "2025-12-31T05:03:51.612Z",
+  "images": [
+    {
+      "id": "88e12df288c8452dbda529144f5924ab",
+      "filename": "d4u8fbo-bbb3203b-9939-4db8-baff-96aa56bb9ef7.jpg",
+      "name": "d4u8fbo-bbb3203b-9939-4db8-baff-96aa56bb9ef7",
+      "description": "Test test",
+      "path": "user-content/images/other/2025/12/88e12df288c8452dbda529144f5924ab.jpg",
+      "webpPath": "user-content/images/other/2025/12/88e12df288c8452dbda529144f5924ab.webp",
+      "category": "other",
+      "tags": [
+        "background"
+      ],
+      "dimensions": {
+        "width": 1060,
+        "height": 1500
+      },
+      "filesize": 172968,
+      "uploadedBy": "BenDol",
+      "uploadDate": "2025-12-31T05:03:35.547Z",
+      "format": "jpg"
+    }
+  ],
+  "byCategory": {
+    "other": [
+      "88e12df288c8452dbda529144f5924ab"
+    ]
+  }
 }
