@@ -1,0 +1,182 @@
+name: Purge Old Images
+
+on:
+  workflow_dispatch:
+    inputs:
+      cutoff_date:
+        description: 'Delete images uploaded before this date (YYYY-MM-DD)'
+        required: true
+        type: string
+      dry_run:
+        description: 'Dry run (preview what would be deleted without actually deleting)'
+        required: false
+        type: boolean
+        default: true
+
+jobs:
+  purge-images:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify owner
+        run: |
+          ACTOR="${{ github.actor }}"
+          OWNER="${{ github.repository_owner }}"
+
+          if [ "$ACTOR" != "$OWNER" ]; then
+            echo "❌ ERROR: Only the repository owner ($OWNER) can run this workflow."
+            echo "You are: $ACTOR"
+            exit 1
+          fi
+
+          echo "✅ Verified: $ACTOR is the repository owner"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Purge old images
+        run: |
+          CUTOFF_DATE="${{ inputs.cutoff_date }}"
+          DRY_RUN="${{ inputs.dry_run }}"
+
+          echo "=========================================="
+          echo "Purge Configuration"
+          echo "=========================================="
+          echo "Cutoff Date: $CUTOFF_DATE"
+          echo "Dry Run: $DRY_RUN"
+          echo "=========================================="
+          echo ""
+
+          # Convert cutoff date to timestamp
+          CUTOFF_TIMESTAMP=$(date -d "$CUTOFF_DATE" +%s)
+
+          if [ -z "$CUTOFF_TIMESTAMP" ]; then
+            echo "❌ ERROR: Invalid date format. Use YYYY-MM-DD"
+            exit 1
+          fi
+
+          echo "Cutoff timestamp: $CUTOFF_TIMESTAMP"
+          echo ""
+
+          # Find all metadata files
+          METADATA_FILES=$(find user-content/images -name "*-metadata.json" 2>/dev/null || true)
+
+          if [ -z "$METADATA_FILES" ]; then
+            echo "No metadata files found."
+            exit 0
+          fi
+
+          DELETED_COUNT=0
+          SKIPPED_COUNT=0
+          TOTAL_SIZE=0
+
+          echo "Scanning metadata files..."
+          echo ""
+
+          for METADATA_FILE in $METADATA_FILES; do
+            # Extract uploadedAt date from metadata
+            UPLOADED_AT=$(node -e "
+              try {
+                const fs = require('fs');
+                const metadata = JSON.parse(fs.readFileSync('$METADATA_FILE', 'utf-8'));
+                console.log(metadata.uploadedAt || metadata.uploadDate || '');
+              } catch (e) {
+                console.log('');
+              }
+            ")
+
+            if [ -z "$UPLOADED_AT" ]; then
+              echo "⚠️  Skipping $METADATA_FILE (no upload date)"
+              SKIPPED_COUNT=$((SKIPPED_COUNT + 1))
+              continue
+            fi
+
+            # Convert upload date to timestamp
+            UPLOAD_TIMESTAMP=$(date -d "$UPLOADED_AT" +%s 2>/dev/null || echo "0")
+
+            if [ "$UPLOAD_TIMESTAMP" = "0" ]; then
+              echo "⚠️  Skipping $METADATA_FILE (invalid date: $UPLOADED_AT)"
+              SKIPPED_COUNT=$((SKIPPED_COUNT + 1))
+              continue
+            fi
+
+            # Check if older than cutoff
+            if [ "$UPLOAD_TIMESTAMP" -lt "$CUTOFF_TIMESTAMP" ]; then
+              # Extract directory and image ID
+              DIR=$(dirname "$METADATA_FILE")
+              IMAGE_ID=$(basename "$METADATA_FILE" "-metadata.json")
+
+              # Find all related files (original, webp, metadata)
+              RELATED_FILES=$(find "$DIR" -name "${IMAGE_ID}.*" -o -name "${IMAGE_ID}-metadata.json")
+
+              echo "🗑️  Would delete: $UPLOADED_AT"
+              for FILE in $RELATED_FILES; do
+                FILE_SIZE=$(stat -f%z "$FILE" 2>/dev/null || stat -c%s "$FILE" 2>/dev/null || echo "0")
+                TOTAL_SIZE=$((TOTAL_SIZE + FILE_SIZE))
+                echo "    - $FILE"
+
+                if [ "$DRY_RUN" = "false" ]; then
+                  rm "$FILE"
+                fi
+              done
+              echo ""
+
+              DELETED_COUNT=$((DELETED_COUNT + 1))
+            else
+              SKIPPED_COUNT=$((SKIPPED_COUNT + 1))
+            fi
+          done
+
+          # Convert total size to human readable
+          TOTAL_SIZE_MB=$(echo "scale=2; $TOTAL_SIZE / 1048576" | bc)
+
+          echo ""
+          echo "=========================================="
+          echo "Purge Summary"
+          echo "=========================================="
+          echo "Images to delete: $DELETED_COUNT"
+          echo "Images kept: $SKIPPED_COUNT"
+          echo "Total size freed: ${TOTAL_SIZE_MB} MB"
+
+          if [ "$DRY_RUN" = "true" ]; then
+            echo ""
+            echo "⚠️  DRY RUN: No files were actually deleted"
+            echo "To delete for real, set dry_run to false"
+          else
+            echo ""
+            echo "✅ Files deleted successfully"
+          fi
+          echo "=========================================="
+
+          # Save summary for next step
+          echo "DELETED_COUNT=$DELETED_COUNT" >> $GITHUB_ENV
+          echo "DRY_RUN=$DRY_RUN" >> $GITHUB_ENV
+
+      - name: Commit deletions
+        if: ${{ inputs.dry_run == false && env.DELETED_COUNT != '0' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add user-content/images/
+          git diff --quiet && git diff --staged --quiet || \
+            (git commit -m "Purge images older than ${{ inputs.cutoff_date }} (${{ env.DELETED_COUNT }} images deleted)" && git push)
+
+      - name: Trigger index regeneration
+        if: ${{ inputs.dry_run == false && env.DELETED_COUNT != '0' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'generate-image-index.yml',
+              ref: 'main'
+            });
+            console.log('✅ Triggered image index regeneration');
