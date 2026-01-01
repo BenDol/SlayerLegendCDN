@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 4,
-  "generatedDate": "2026-01-01T19:12:50.233Z",
+  "totalImages": 5,
+  "generatedDate": "2026-01-01T19:49:08.148Z",
   "images": [
+    {
+      "id": "ad26791882804b029b89577771b1f893",
+      "filename": "Screenshot 2026-01-01 144727.png",
+      "name": "Awakened Latent Power Screen",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/ad26791882804b029b89577771b1f893.png",
+      "webpPath": "user-content/images/characters/2026/01/ad26791882804b029b89577771b1f893.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 523,
+        "height": 923
+      },
+      "filesize": 283443,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-01T19:48:53.800Z",
+      "format": "png"
+    },
     {
       "id": "0b9a93bfa162423cb82e1ac90ce67c2f",
       "filename": "Screenshot 2026-01-01 135856.png",
@@ -85,6 +103,7 @@
   ],
   "byCategory": {
     "characters": [
+      "ad26791882804b029b89577771b1f893",
       "0b9a93bfa162423cb82e1ac90ce67c2f",
       "29f69bf1c244423387a3a4ddcbec2947",
       "64f84b65d55049a791cfe63323dd4432"
