@@ -2,9 +2,8 @@
 /**
  * Build Game Asset Image Index Script
  *
- * Scans the game-assets/images directory and builds:
- * - image-index.json (main array format)
- * - image-search-index.json (object format for fast lookups)
+ * Scans the game-assets/images directory and builds image-index.json
+ * with metadata for all game images.
  *
  * This script is designed to run in GitHub Actions to automatically
  * update the image database when images are added/modified in the CDN.
@@ -36,9 +35,8 @@ const getCLIArg = (flag) => {
 const CDN_DIR = path.resolve(__dirname, getCLIArg('--cdn-dir') || '../game-assets/images');
 const OUTPUT_DIR = path.resolve(__dirname, getCLIArg('--output-dir') || '../game-assets/images');
 
-// Output file paths
+// Output file path
 const INDEX_PATH = path.join(OUTPUT_DIR, 'image-index.json');
-const SEARCH_INDEX_PATH = path.join(OUTPUT_DIR, 'image-search-index.json');
 
 /**
  * Get all images in a directory recursively
@@ -189,8 +187,7 @@ async function buildImageIndexes() {
   }
 
   // Build image entries
-  const mainIndexImages = [];
-  const searchIndexImages = {};
+  const images = [];
   let processed = 0;
   let skipped = 0;
 
@@ -230,12 +227,8 @@ async function buildImageIndexes() {
         imageEntry.dimensions = dimensions;
       }
 
-      // Add to main index (array format)
-      mainIndexImages.push(imageEntry);
-
-      // Add to search index (object format with unique ID)
-      const searchId = `img-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-      searchIndexImages[searchId] = imageEntry;
+      // Add to index
+      images.push(imageEntry);
 
       processed++;
 
@@ -255,41 +248,29 @@ async function buildImageIndexes() {
     console.log(`⚠️ Skipped ${skipped} images due to errors`);
   }
 
-  // Build final indexes
-  const mainIndex = {
+  // Build final index
+  const imageIndex = {
     version: '1.0',
-    totalImages: mainIndexImages.length,
+    totalImages: images.length,
     generatedAt: new Date().toISOString(),
-    images: mainIndexImages
-  };
-
-  const searchIndex = {
-    version: '1.0',
-    totalImages: Object.keys(searchIndexImages).length,
-    generatedAt: new Date().toISOString(),
-    images: searchIndexImages
+    images: images
   };
 
   // Ensure output directory exists
   await fs.mkdir(OUTPUT_DIR, { recursive: true });
 
-  // Write indexes
+  // Write index
   console.log(`\n💾 Writing image-index.json...`);
-  await fs.writeFile(INDEX_PATH, JSON.stringify(mainIndex, null, 2), 'utf-8');
+  await fs.writeFile(INDEX_PATH, JSON.stringify(imageIndex, null, 2), 'utf-8');
 
-  console.log(`💾 Writing image-search-index.json...`);
-  await fs.writeFile(SEARCH_INDEX_PATH, JSON.stringify(searchIndex, null, 2), 'utf-8');
-
-  // Calculate file sizes
+  // Calculate file size
   const indexStats = await fs.stat(INDEX_PATH);
-  const searchIndexStats = await fs.stat(SEARCH_INDEX_PATH);
 
   console.log(`\n📊 Summary:`);
-  console.log(`  Total images: ${mainIndexImages.length}`);
-  console.log(`  Categories: ${new Set(mainIndexImages.map(img => img.category)).size}`);
+  console.log(`  Total images: ${images.length}`);
+  console.log(`  Categories: ${new Set(images.map(img => img.category)).size}`);
   console.log(`  image-index.json: ${(indexStats.size / 1024 / 1024).toFixed(2)} MB`);
-  console.log(`  image-search-index.json: ${(searchIndexStats.size / 1024 / 1024).toFixed(2)} MB`);
-  console.log(`\n✅ Image indexes built successfully!`);
+  console.log(`\n✅ Image index built successfully!`);
 }
 
 // Run the script

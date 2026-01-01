@@ -37,22 +37,22 @@ jobs:
             npm ci
           fi
 
-      - name: Build game asset indexes
+      - name: Build game asset index
         run: node scripts/build-game-asset-index.js
 
       - name: Check for changes
         id: check_changes
         run: |
-          git add game-assets/images/image-index.json game-assets/images/image-search-index.json
+          git add game-assets/images/image-index.json
           if git diff --staged --quiet; then
             echo "changes=false" >> $GITHUB_OUTPUT
             echo "No changes to commit"
           else
             echo "changes=true" >> $GITHUB_OUTPUT
-            echo "Image indexes have been updated"
+            echo "Image index has been updated"
           fi
 
-      - name: Commit and push indexes
+      - name: Commit and push index
         if: steps.check_changes.outputs.changes == 'true'
         run: |
           git config user.name "github-actions[bot]"
@@ -62,12 +62,10 @@ jobs:
           TOTAL_IMAGES=$(jq '.totalImages' game-assets/images/image-index.json)
           TIMESTAMP=$(jq -r '.generatedAt' game-assets/images/image-index.json)
 
-          git commit -m "Update game asset indexes - $TOTAL_IMAGES images [skip ci]
-
-Generated at: $TIMESTAMP
-Triggered by: ${{ github.event_name }}
-
-🤖 Automated commit"
+          git commit -m "Update game asset index - $TOTAL_IMAGES images [skip ci]" \
+            -m "Generated at: $TIMESTAMP" \
+            -m "Triggered by: ${{ github.event_name }}" \
+            -m "Automated commit"
 
           # Try to push with retries (handles concurrent workflow runs)
           for i in 1 2 3 4 5; do
@@ -79,9 +77,9 @@ Triggered by: ${{ github.event_name }}
             echo "⚠️ Push failed, attempt $i of 5. Pulling with rebase..."
             git pull --rebase origin main
 
-            # Regenerate indexes after rebase (files may have changed)
+            # Regenerate index after rebase (files may have changed)
             node scripts/build-game-asset-index.js
-            git add game-assets/images/image-index.json game-assets/images/image-search-index.json
+            git add game-assets/images/image-index.json
 
             # Check if regeneration created new changes
             if ! git diff --quiet --staged; then
@@ -89,12 +87,10 @@ Triggered by: ${{ github.event_name }}
               TOTAL_IMAGES=$(jq '.totalImages' game-assets/images/image-index.json)
               TIMESTAMP=$(jq -r '.generatedAt' game-assets/images/image-index.json)
 
-              git commit --amend -m "Update game asset indexes - $TOTAL_IMAGES images [skip ci]
-
-Generated at: $TIMESTAMP
-Triggered by: ${{ github.event_name }}
-
-🤖 Automated commit (rebased)"
+              git commit --amend -m "Update game asset index - $TOTAL_IMAGES images [skip ci]" \
+                -m "Generated at: $TIMESTAMP" \
+                -m "Triggered by: ${{ github.event_name }}" \
+                -m "Automated commit (rebased)"
             fi
 
             sleep $((i * 2))  # Exponential backoff: 2s, 4s, 6s, 8s, 10s
@@ -123,17 +119,15 @@ Triggered by: ${{ github.event_name }}
             if [ "${{ steps.check_changes.outputs.changes }}" == "true" ]; then
               echo "📝 **Changes committed and pushed**" >> $GITHUB_STEP_SUMMARY
             else
-              echo "ℹ️ **No changes detected** - indexes are up to date" >> $GITHUB_STEP_SUMMARY
+              echo "ℹ️ **No changes detected** - index is up to date" >> $GITHUB_STEP_SUMMARY
             fi
 
-            # Show file sizes
+            # Show file size
             INDEX_SIZE=$(stat -f%z game-assets/images/image-index.json 2>/dev/null || stat -c%s game-assets/images/image-index.json 2>/dev/null || echo "unknown")
-            SEARCH_SIZE=$(stat -f%z game-assets/images/image-search-index.json 2>/dev/null || stat -c%s game-assets/images/image-search-index.json 2>/dev/null || echo "unknown")
 
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### File Sizes" >> $GITHUB_STEP_SUMMARY
+            echo "### File Size" >> $GITHUB_STEP_SUMMARY
             echo "- image-index.json: $(numfmt --to=iec-i --suffix=B $INDEX_SIZE 2>/dev/null || echo "${INDEX_SIZE} bytes")" >> $GITHUB_STEP_SUMMARY
-            echo "- image-search-index.json: $(numfmt --to=iec-i --suffix=B $SEARCH_SIZE 2>/dev/null || echo "${SEARCH_SIZE} bytes")" >> $GITHUB_STEP_SUMMARY
           else
             echo "❌ **Build failed** - image-index.json not found" >> $GITHUB_STEP_SUMMARY
           fi
