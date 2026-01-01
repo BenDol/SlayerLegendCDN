@@ -1,0 +1,1 @@
+# All game assets have had their quality reduced by ~70% to avoid issues with content violations. They are also a small portion of the actual game assets. These images are simply for use as references in the wiki.

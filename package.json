@@ -1,0 +1,21 @@
+{
+  "name": "slayerlegend-cdn",
+  "version": "1.0.0",
+  "description": "CDN repository for Slayer Legend game assets",
+  "type": "module",
+  "scripts": {
+    "build:index": "node scripts/build-game-asset-index.js",
+    "build:user-index": "node scripts/generate-image-index.js"
+  },
+  "dependencies": {
+    "glob": "^10.3.10",
+    "sharp": "^0.33.1"
+  },
+  "keywords": [
+    "cdn",
+    "assets",
+    "slayer-legend"
+  ],
+  "author": "BenDol",
+  "license": "MIT"
+}
