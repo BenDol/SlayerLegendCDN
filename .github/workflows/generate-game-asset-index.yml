@@ -1,4 +1,4 @@
-name: Build Game Asset Index
+name: Generate Game Asset Index
 
 on:
   push:
@@ -37,7 +37,7 @@ jobs:
             npm ci
           fi
 
-      - name: Build game asset index
+      - name: Generate game asset index
         run: node scripts/build-game-asset-index.js
 
       - name: Check for changes
