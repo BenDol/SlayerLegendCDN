@@ -186,7 +186,7 @@ async function buildImageIndexes() {
       // Get relative path from CDN_DIR (e.g., "icons/fire.png", "spirits/Spirit_001.png")
       const relativeToCdn = path.relative(CDN_DIR, fullPath);
 
-      // Store as relative path (will be prepended with /images/content/ by the wiki)
+      // Store as relative path (basePath /images will be in index metadata)
       const imagePath = '/' + relativeToCdn.replace(/\\/g, '/');
 
       // Get file stats
@@ -241,6 +241,7 @@ async function buildImageIndexes() {
   // Build final index
   const imageIndex = {
     version: '1.0',
+    path: '/images',  // Base path in CDN directory structure (game-assets/images)
     totalImages: images.length,
     generatedAt: new Date().toISOString(),
     images: images
