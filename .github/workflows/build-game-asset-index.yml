@@ -1,0 +1,139 @@
+name: Build Game Asset Index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'game-assets/images/**/*.jpg'
+      - 'game-assets/images/**/*.jpeg'
+      - 'game-assets/images/**/*.png'
+      - 'game-assets/images/**/*.webp'
+      - 'game-assets/images/**/*.gif'
+      - 'game-assets/images/**/*.svg'
+  workflow_dispatch:
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          if [ ! -f package.json ]; then
+            echo "Creating package.json..."
+            npm init -y
+            npm install sharp glob
+          else
+            npm ci
+          fi
+
+      - name: Build game asset indexes
+        run: node scripts/build-game-asset-index.js
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git add game-assets/images/image-index.json game-assets/images/image-search-index.json
+          if git diff --staged --quiet; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No changes to commit"
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "Image indexes have been updated"
+          fi
+
+      - name: Commit and push indexes
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Get stats for commit message
+          TOTAL_IMAGES=$(jq '.totalImages' game-assets/images/image-index.json)
+          TIMESTAMP=$(jq -r '.generatedAt' game-assets/images/image-index.json)
+
+          git commit -m "Update game asset indexes - $TOTAL_IMAGES images [skip ci]
+
+Generated at: $TIMESTAMP
+Triggered by: ${{ github.event_name }}
+
+🤖 Automated commit"
+
+          # Try to push with retries (handles concurrent workflow runs)
+          for i in 1 2 3 4 5; do
+            if git push; then
+              echo "✅ Successfully pushed changes"
+              exit 0
+            fi
+
+            echo "⚠️ Push failed, attempt $i of 5. Pulling with rebase..."
+            git pull --rebase origin main
+
+            # Regenerate indexes after rebase (files may have changed)
+            node scripts/build-game-asset-index.js
+            git add game-assets/images/image-index.json game-assets/images/image-search-index.json
+
+            # Check if regeneration created new changes
+            if ! git diff --quiet --staged; then
+              # Update commit message with new stats
+              TOTAL_IMAGES=$(jq '.totalImages' game-assets/images/image-index.json)
+              TIMESTAMP=$(jq -r '.generatedAt' game-assets/images/image-index.json)
+
+              git commit --amend -m "Update game asset indexes - $TOTAL_IMAGES images [skip ci]
+
+Generated at: $TIMESTAMP
+Triggered by: ${{ github.event_name }}
+
+🤖 Automated commit (rebased)"
+            fi
+
+            sleep $((i * 2))  # Exponential backoff: 2s, 4s, 6s, 8s, 10s
+          done
+
+          echo "❌ Failed to push after 5 attempts"
+          exit 1
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Game Asset Index Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f "game-assets/images/image-index.json" ]; then
+            TOTAL_IMAGES=$(jq '.totalImages' game-assets/images/image-index.json)
+            GENERATED_AT=$(jq -r '.generatedAt' game-assets/images/image-index.json)
+
+            echo "✅ **Build successful**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "- **Total Images:** $TOTAL_IMAGES" >> $GITHUB_STEP_SUMMARY
+            echo "- **Generated At:** $GENERATED_AT" >> $GITHUB_STEP_SUMMARY
+            echo "- **Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+
+            if [ "${{ steps.check_changes.outputs.changes }}" == "true" ]; then
+              echo "📝 **Changes committed and pushed**" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "ℹ️ **No changes detected** - indexes are up to date" >> $GITHUB_STEP_SUMMARY
+            fi
+
+            # Show file sizes
+            INDEX_SIZE=$(stat -f%z game-assets/images/image-index.json 2>/dev/null || stat -c%s game-assets/images/image-index.json 2>/dev/null || echo "unknown")
+            SEARCH_SIZE=$(stat -f%z game-assets/images/image-search-index.json 2>/dev/null || stat -c%s game-assets/images/image-search-index.json 2>/dev/null || echo "unknown")
+
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### File Sizes" >> $GITHUB_STEP_SUMMARY
+            echo "- image-index.json: $(numfmt --to=iec-i --suffix=B $INDEX_SIZE 2>/dev/null || echo "${INDEX_SIZE} bytes")" >> $GITHUB_STEP_SUMMARY
+            echo "- image-search-index.json: $(numfmt --to=iec-i --suffix=B $SEARCH_SIZE 2>/dev/null || echo "${SEARCH_SIZE} bytes")" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **Build failed** - image-index.json not found" >> $GITHUB_STEP_SUMMARY
+          fi
