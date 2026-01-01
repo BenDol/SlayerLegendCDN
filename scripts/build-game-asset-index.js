@@ -69,28 +69,18 @@ async function getImagesInDirectory(dir) {
 }
 
 /**
- * Extract category from image path
- * Properly handles /images/content/X/ structure
+ * Extract category from relative path
  *
  * Examples:
- *   /images/content/spirits/Spirit_001.png -> 'spirits'
- *   /images/content/icons/fire.png -> 'icons'
- *   /images/content/equipment/weapons/sword.png -> 'equipment'
+ *   spirits/Spirit_001.png -> 'spirits'
+ *   icons/fire.png -> 'icons'
+ *   equipment/weapons/sword.png -> 'equipment'
+ *
+ * Note: This is now unused as we extract category directly in the loop
  */
-function extractCategory(imagePath) {
-  const pathParts = imagePath.split('/').filter(p => p);
-
-  // For /images/content/X/..., category is X (the subdirectory under content)
-  if (pathParts.length >= 3 && pathParts[0] === 'images' && pathParts[1] === 'content') {
-    return pathParts[2];
-  }
-
-  // For /images/X/... (legacy, no content subdir)
-  if (pathParts.length >= 2 && pathParts[0] === 'images') {
-    return pathParts[1];
-  }
-
-  return 'uncategorized';
+function extractCategory(relativePath) {
+  const pathParts = relativePath.split('/').filter(p => p);
+  return pathParts[0] || 'uncategorized';
 }
 
 /**
@@ -193,18 +183,18 @@ async function buildImageIndexes() {
 
   for (const fullPath of imageFiles) {
     try {
-      // Get relative path from CDN_DIR
+      // Get relative path from CDN_DIR (e.g., "icons/fire.png", "spirits/Spirit_001.png")
       const relativeToCdn = path.relative(CDN_DIR, fullPath);
 
-      // Convert to web path: /images/content/X/Y/Z.png
-      const imagePath = '/images/content/' + relativeToCdn.replace(/\\/g, '/');
+      // Store as relative path (will be prepended with /images/content/ by the wiki)
+      const imagePath = '/' + relativeToCdn.replace(/\\/g, '/');
 
       // Get file stats
       const stats = await fs.stat(fullPath);
       const filename = path.basename(fullPath);
 
-      // Extract category from path
-      const category = extractCategory(imagePath);
+      // Extract category from path (first directory in relative path)
+      const category = relativeToCdn.split(/[/\\]/)[0] || 'uncategorized';
 
       // Get dimensions (may be null for SVG)
       const dimensions = await getImageDimensions(fullPath);
