@@ -1,4 +1,4 @@
-name: Generate Game Asset Index
+name: Build Game Asset Index
 
 on:
   push:
@@ -38,7 +38,7 @@ jobs:
           fi
 
       - name: Build game asset index
-        run: node scripts/generate-game-asset-index.js
+        run: node scripts/build-game-asset-index.js
 
       - name: Check for changes
         id: check_changes
@@ -78,7 +78,7 @@ jobs:
             git pull --rebase origin main
 
             # Regenerate index after rebase (files may have changed)
-            node scripts/generate-game-asset-index.js
+            node scripts/build-game-asset-index.js
             git add game-assets/images/image-index.json
 
             # Check if regeneration created new changes
