@@ -7,10 +7,10 @@
  * Usage: node scripts/generate-image-index.js
  */
 
-const fs = require('fs');
-const path = require('path');
-const sharp = require('sharp');
-const glob = require('glob');
+import fs from 'fs';
+import path from 'path';
+import sharp from 'sharp';
+import { globSync } from 'glob';
 
 const BASE_PATH = 'user-content/images';
 const OUTPUT_PATH = path.join(BASE_PATH, 'image-index.json');
@@ -20,7 +20,7 @@ async function generateIndex() {
   console.log(`Scanning ${BASE_PATH} for metadata files...`);
 
   // Find all metadata files
-  const metadataFiles = glob.sync(`${BASE_PATH}/**/*-metadata.json`);
+  const metadataFiles = globSync(`${BASE_PATH}/**/*-metadata.json`);
   console.log(`Found ${metadataFiles.length} metadata files`);
 
   if (metadataFiles.length === 0) {
@@ -49,7 +49,7 @@ async function generateIndex() {
       const dir = path.dirname(metaFile);
 
       // Find original file (may have different extension)
-      const originalFiles = glob.sync(`${dir}/${imageId}.{jpg,jpeg,png,gif,webp}`);
+      const originalFiles = globSync(`${dir}/${imageId}.{jpg,jpeg,png,gif,webp}`);
       const originalFile = originalFiles.find(f => !f.endsWith('.webp')) || originalFiles[0];
       const webpFile = path.join(dir, `${imageId}.webp`);
 
