@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 10,
-  "generatedDate": "2026-01-02T23:49:50.738Z",
+  "totalImages": 11,
+  "generatedDate": "2026-01-02T23:53:40.085Z",
   "images": [
+    {
+      "id": "c3e3b2d131014f8f9a517f60ae3a1afd",
+      "filename": "Screenshot 2026-01-02 185255.png",
+      "name": "Training Diary Screen 2",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/c3e3b2d131014f8f9a517f60ae3a1afd.png",
+      "webpPath": "user-content/images/characters/2026/01/c3e3b2d131014f8f9a517f60ae3a1afd.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 541,
+        "height": 965
+      },
+      "filesize": 227876,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-02T23:53:22.078Z",
+      "format": "png"
+    },
     {
       "id": "c0d7928d32d24565b4a8285b30821e40",
       "filename": "Screenshot 2026-01-02 131627.png",
@@ -196,6 +214,7 @@
   ],
   "byCategory": {
     "characters": [
+      "c3e3b2d131014f8f9a517f60ae3a1afd",
       "c0d7928d32d24565b4a8285b30821e40",
       "d72f2a8d6131459eae8ea38f03f3e5c8",
       "7b3e089bcc9d43e3935a606e4f8c0b9b",
