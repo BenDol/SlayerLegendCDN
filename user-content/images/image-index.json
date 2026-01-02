@@ -1,8 +1,83 @@
 {
   "version": "1.0",
-  "totalImages": 5,
-  "generatedDate": "2026-01-01T19:49:08.148Z",
+  "totalImages": 9,
+  "generatedDate": "2026-01-02T20:31:29.663Z",
   "images": [
+    {
+      "id": "7cf57df04d0d4dd5b56ee8d7f36771fd",
+      "filename": "unnamed.webp",
+      "name": "Test",
+      "description": "Test test",
+      "path": "user-content/images/other/2026/01/7cf57df04d0d4dd5b56ee8d7f36771fd.webp",
+      "webpPath": "user-content/images/other/2026/01/7cf57df04d0d4dd5b56ee8d7f36771fd.webp",
+      "category": "other",
+      "tags": [
+        "test",
+        "art"
+      ],
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "filesize": 154800,
+      "uploadedBy": "BenDol",
+      "uploadDate": "2026-01-02T20:25:19.774Z",
+      "format": "webp"
+    },
+    {
+      "id": "d72f2a8d6131459eae8ea38f03f3e5c8",
+      "filename": "Screenshot 2026-01-02 131627.png",
+      "name": "Training Diary Screen",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/d72f2a8d6131459eae8ea38f03f3e5c8.png",
+      "webpPath": "user-content/images/characters/2026/01/d72f2a8d6131459eae8ea38f03f3e5c8.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 542,
+        "height": 942
+      },
+      "filesize": 204084,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-02T18:22:54.053Z",
+      "format": "png"
+    },
+    {
+      "id": "7b3e089bcc9d43e3935a606e4f8c0b9b",
+      "filename": "Screenshot 2026-01-02 131627.png",
+      "name": "Training Diary Screen",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/7b3e089bcc9d43e3935a606e4f8c0b9b.png",
+      "webpPath": "user-content/images/characters/2026/01/7b3e089bcc9d43e3935a606e4f8c0b9b.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 542,
+        "height": 942
+      },
+      "filesize": 204084,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-02T18:19:37.153Z",
+      "format": "png"
+    },
+    {
+      "id": "f268712e6a664f419a36f71b36b625ed",
+      "filename": "Screenshot 2026-01-02 131627.png",
+      "name": "Training Diary Screen",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/f268712e6a664f419a36f71b36b625ed.png",
+      "webpPath": "user-content/images/characters/2026/01/f268712e6a664f419a36f71b36b625ed.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 542,
+        "height": 942
+      },
+      "filesize": 204084,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-02T18:17:42.381Z",
+      "format": "png"
+    },
     {
       "id": "ad26791882804b029b89577771b1f893",
       "filename": "Screenshot 2026-01-01 144727.png",
@@ -102,14 +177,18 @@
     }
   ],
   "byCategory": {
+    "other": [
+      "7cf57df04d0d4dd5b56ee8d7f36771fd",
+      "995e5ddfd358409bb17610befb860f38"
+    ],
     "characters": [
+      "d72f2a8d6131459eae8ea38f03f3e5c8",
+      "7b3e089bcc9d43e3935a606e4f8c0b9b",
+      "f268712e6a664f419a36f71b36b625ed",
       "ad26791882804b029b89577771b1f893",
       "0b9a93bfa162423cb82e1ac90ce67c2f",
       "29f69bf1c244423387a3a4ddcbec2947",
       "64f84b65d55049a791cfe63323dd4432"
-    ],
-    "other": [
-      "995e5ddfd358409bb17610befb860f38"
     ]
   }
 }
