@@ -1,0 +1,19 @@
+{
+  "name": "Test",
+  "description": "Test test",
+  "category": "other",
+  "tags": [
+    "test",
+    "art"
+  ],
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uploadedBy": "BenDol",
+  "uploadedAt": "2026-01-02T20:25:19.774Z",
+  "uploadDate": "2026-01-02T20:25:19.774Z",
+  "filename": "unnamed.webp",
+  "fileSize": 182876,
+  "format": "webp"
+}
