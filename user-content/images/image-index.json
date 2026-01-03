@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 14,
-  "generatedDate": "2026-01-03T07:22:32.334Z",
+  "totalImages": 15,
+  "generatedDate": "2026-01-03T07:22:49.173Z",
   "images": [
+    {
+      "id": "1d550260c0fa4ce997ffbf532a4f1c4f",
+      "filename": "Swordsman.png",
+      "name": "Swordsman",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/1d550260c0fa4ce997ffbf532a4f1c4f.png",
+      "webpPath": "user-content/images/characters/2026/01/1d550260c0fa4ce997ffbf532a4f1c4f.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 7911,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T07:22:33.619Z",
+      "format": "png"
+    },
     {
       "id": "9762d3021bec43eebdc6fc0d48e47577",
       "filename": "Adventurer.png",
@@ -268,6 +286,7 @@
   ],
   "byCategory": {
     "characters": [
+      "1d550260c0fa4ce997ffbf532a4f1c4f",
       "9762d3021bec43eebdc6fc0d48e47577",
       "a26fefa2630d45fb87d9e1fa63d4ce7b",
       "35b902e20fdf46e08eb9ad7905b0f2dd",
