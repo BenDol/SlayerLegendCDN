@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 18,
-  "generatedDate": "2026-01-03T07:29:38.425Z",
+  "totalImages": 19,
+  "generatedDate": "2026-01-03T07:32:12.936Z",
   "images": [
+    {
+      "id": "6347880d7a704a06a2244d094da2d791",
+      "filename": "Warrior.png",
+      "name": "Warrior",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/6347880d7a704a06a2244d094da2d791.png",
+      "webpPath": "user-content/images/characters/2026/01/6347880d7a704a06a2244d094da2d791.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "filesize": 533568,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T07:31:54.235Z",
+      "format": "png"
+    },
     {
       "id": "30c76eac41d44288b38a01350d38fd65",
       "filename": "Lancer.png",
@@ -340,6 +358,7 @@
   ],
   "byCategory": {
     "characters": [
+      "6347880d7a704a06a2244d094da2d791",
       "30c76eac41d44288b38a01350d38fd65",
       "1e3151e67eac4f48ae0f0bf73f005149",
       "cf9990039fd24ed286624ce9043be1d1",
