@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 12,
-  "generatedDate": "2026-01-03T07:08:41.116Z",
+  "totalImages": 13,
+  "generatedDate": "2026-01-03T07:12:32.731Z",
   "images": [
+    {
+      "id": "a26fefa2630d45fb87d9e1fa63d4ce7b",
+      "filename": "Trainee.webp",
+      "name": "Trainee",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/a26fefa2630d45fb87d9e1fa63d4ce7b.webp",
+      "webpPath": "user-content/images/characters/2026/01/a26fefa2630d45fb87d9e1fa63d4ce7b.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 1698,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T07:12:16.486Z",
+      "format": "webp"
+    },
     {
       "id": "35b902e20fdf46e08eb9ad7905b0f2dd",
       "filename": "Trainee.png",
@@ -232,6 +250,7 @@
   ],
   "byCategory": {
     "characters": [
+      "a26fefa2630d45fb87d9e1fa63d4ce7b",
       "35b902e20fdf46e08eb9ad7905b0f2dd",
       "c3e3b2d131014f8f9a517f60ae3a1afd",
       "c0d7928d32d24565b4a8285b30821e40",
