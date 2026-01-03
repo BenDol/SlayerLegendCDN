@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 24,
-  "generatedDate": "2026-01-03T07:40:48.414Z",
+  "totalImages": 25,
+  "generatedDate": "2026-01-03T07:43:37.196Z",
   "images": [
+    {
+      "id": "f7fabde6febe41ccbcb99cfa43345175",
+      "filename": "Gladiator.png",
+      "name": "Gladiator",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/f7fabde6febe41ccbcb99cfa43345175.png",
+      "webpPath": "user-content/images/characters/2026/01/f7fabde6febe41ccbcb99cfa43345175.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 8912,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T07:43:23.433Z",
+      "format": "png"
+    },
     {
       "id": "21f821c4fc414840997d7f687e0ae710",
       "filename": "Red Gladiator.png",
@@ -448,6 +466,7 @@
   ],
   "byCategory": {
     "characters": [
+      "f7fabde6febe41ccbcb99cfa43345175",
       "21f821c4fc414840997d7f687e0ae710",
       "19e2a56b8fea4cf6954c8af02660fcac",
       "368c218f0dc946c2a8b686fc33493b27",
