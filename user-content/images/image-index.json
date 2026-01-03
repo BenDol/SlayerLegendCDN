@@ -1,8 +1,44 @@
 {
   "version": "1.0",
-  "totalImages": 15,
-  "generatedDate": "2026-01-03T07:22:49.173Z",
+  "totalImages": 17,
+  "generatedDate": "2026-01-03T07:27:21.194Z",
   "images": [
+    {
+      "id": "1e3151e67eac4f48ae0f0bf73f005149",
+      "filename": "Defender.png",
+      "name": "Defender",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/1e3151e67eac4f48ae0f0bf73f005149.png",
+      "webpPath": "user-content/images/characters/2026/01/1e3151e67eac4f48ae0f0bf73f005149.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 9400,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T07:27:08.603Z",
+      "format": "png"
+    },
+    {
+      "id": "cf9990039fd24ed286624ce9043be1d1",
+      "filename": "Warrior.png",
+      "name": "Warrior",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/cf9990039fd24ed286624ce9043be1d1.png",
+      "webpPath": "user-content/images/characters/2026/01/cf9990039fd24ed286624ce9043be1d1.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 10281,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T07:26:53.690Z",
+      "format": "png"
+    },
     {
       "id": "1d550260c0fa4ce997ffbf532a4f1c4f",
       "filename": "Swordsman.png",
@@ -286,6 +322,8 @@
   ],
   "byCategory": {
     "characters": [
+      "1e3151e67eac4f48ae0f0bf73f005149",
+      "cf9990039fd24ed286624ce9043be1d1",
       "1d550260c0fa4ce997ffbf532a4f1c4f",
       "9762d3021bec43eebdc6fc0d48e47577",
       "a26fefa2630d45fb87d9e1fa63d4ce7b",
