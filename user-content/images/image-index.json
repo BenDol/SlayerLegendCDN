@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 13,
-  "generatedDate": "2026-01-03T07:12:32.731Z",
+  "totalImages": 14,
+  "generatedDate": "2026-01-03T07:22:32.334Z",
   "images": [
+    {
+      "id": "9762d3021bec43eebdc6fc0d48e47577",
+      "filename": "Adventurer.png",
+      "name": "Adventurer",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/9762d3021bec43eebdc6fc0d48e47577.png",
+      "webpPath": "user-content/images/characters/2026/01/9762d3021bec43eebdc6fc0d48e47577.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 7874,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T07:22:13.430Z",
+      "format": "png"
+    },
     {
       "id": "a26fefa2630d45fb87d9e1fa63d4ce7b",
       "filename": "Trainee.webp",
@@ -250,6 +268,7 @@
   ],
   "byCategory": {
     "characters": [
+      "9762d3021bec43eebdc6fc0d48e47577",
       "a26fefa2630d45fb87d9e1fa63d4ce7b",
       "35b902e20fdf46e08eb9ad7905b0f2dd",
       "c3e3b2d131014f8f9a517f60ae3a1afd",
