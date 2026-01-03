@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 21,
-  "generatedDate": "2026-01-03T07:35:04.813Z",
+  "totalImages": 22,
+  "generatedDate": "2026-01-03T07:39:36.692Z",
   "images": [
+    {
+      "id": "368c218f0dc946c2a8b686fc33493b27",
+      "filename": "Paladin.png",
+      "name": "Paladin",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/368c218f0dc946c2a8b686fc33493b27.png",
+      "webpPath": "user-content/images/characters/2026/01/368c218f0dc946c2a8b686fc33493b27.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 9275,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T07:39:23.207Z",
+      "format": "png"
+    },
     {
       "id": "e5c7887b7a1c4fe39f7902f7a003a409",
       "filename": "Breaker.png",
@@ -394,6 +412,7 @@
   ],
   "byCategory": {
     "characters": [
+      "368c218f0dc946c2a8b686fc33493b27",
       "e5c7887b7a1c4fe39f7902f7a003a409",
       "cc053a7b0179405b946cbd65b194e4da",
       "6347880d7a704a06a2244d094da2d791",
