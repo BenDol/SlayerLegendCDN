@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 19,
-  "generatedDate": "2026-01-03T07:32:12.936Z",
+  "totalImages": 20,
+  "generatedDate": "2026-01-03T07:33:30.052Z",
   "images": [
+    {
+      "id": "cc053a7b0179405b946cbd65b194e4da",
+      "filename": "Ranger.png",
+      "name": "Ranger",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/cc053a7b0179405b946cbd65b194e4da.png",
+      "webpPath": "user-content/images/characters/2026/01/cc053a7b0179405b946cbd65b194e4da.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 9298,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T07:33:13.638Z",
+      "format": "png"
+    },
     {
       "id": "6347880d7a704a06a2244d094da2d791",
       "filename": "Warrior.png",
@@ -358,6 +376,7 @@
   ],
   "byCategory": {
     "characters": [
+      "cc053a7b0179405b946cbd65b194e4da",
       "6347880d7a704a06a2244d094da2d791",
       "30c76eac41d44288b38a01350d38fd65",
       "1e3151e67eac4f48ae0f0bf73f005149",
