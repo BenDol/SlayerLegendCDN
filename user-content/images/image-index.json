@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 27,
-  "generatedDate": "2026-01-03T07:58:14.939Z",
+  "totalImages": 28,
+  "generatedDate": "2026-01-03T07:58:28.951Z",
   "images": [
+    {
+      "id": "224e31c0035d4900886ebe1a6f470d49",
+      "filename": "Shadow Hunter.png",
+      "name": "Shadow Hunter",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/224e31c0035d4900886ebe1a6f470d49.png",
+      "webpPath": "user-content/images/characters/2026/01/224e31c0035d4900886ebe1a6f470d49.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 12343,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T07:58:16.333Z",
+      "format": "png"
+    },
     {
       "id": "08ae3459ac9a4291a3d63143a3ce12b0",
       "filename": "Weapon Master.png",
@@ -502,6 +520,7 @@
   ],
   "byCategory": {
     "characters": [
+      "224e31c0035d4900886ebe1a6f470d49",
       "08ae3459ac9a4291a3d63143a3ce12b0",
       "2a8582d768bc454095d4de346968ce52",
       "f7fabde6febe41ccbcb99cfa43345175",
