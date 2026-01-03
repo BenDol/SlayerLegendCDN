@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 17,
-  "generatedDate": "2026-01-03T07:27:21.194Z",
+  "totalImages": 18,
+  "generatedDate": "2026-01-03T07:29:38.425Z",
   "images": [
+    {
+      "id": "30c76eac41d44288b38a01350d38fd65",
+      "filename": "Lancer.png",
+      "name": "Lancer",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/30c76eac41d44288b38a01350d38fd65.png",
+      "webpPath": "user-content/images/characters/2026/01/30c76eac41d44288b38a01350d38fd65.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 9339,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T07:29:21.117Z",
+      "format": "png"
+    },
     {
       "id": "1e3151e67eac4f48ae0f0bf73f005149",
       "filename": "Defender.png",
@@ -322,6 +340,7 @@
   ],
   "byCategory": {
     "characters": [
+      "30c76eac41d44288b38a01350d38fd65",
       "1e3151e67eac4f48ae0f0bf73f005149",
       "cf9990039fd24ed286624ce9043be1d1",
       "1d550260c0fa4ce997ffbf532a4f1c4f",
