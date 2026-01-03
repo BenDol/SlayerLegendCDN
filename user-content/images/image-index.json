@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 20,
-  "generatedDate": "2026-01-03T07:33:30.052Z",
+  "totalImages": 21,
+  "generatedDate": "2026-01-03T07:35:04.813Z",
   "images": [
+    {
+      "id": "e5c7887b7a1c4fe39f7902f7a003a409",
+      "filename": "Breaker.png",
+      "name": "Breaker",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/e5c7887b7a1c4fe39f7902f7a003a409.png",
+      "webpPath": "user-content/images/characters/2026/01/e5c7887b7a1c4fe39f7902f7a003a409.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "filesize": 545231,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T07:34:51.512Z",
+      "format": "png"
+    },
     {
       "id": "cc053a7b0179405b946cbd65b194e4da",
       "filename": "Ranger.png",
@@ -376,6 +394,7 @@
   ],
   "byCategory": {
     "characters": [
+      "e5c7887b7a1c4fe39f7902f7a003a409",
       "cc053a7b0179405b946cbd65b194e4da",
       "6347880d7a704a06a2244d094da2d791",
       "30c76eac41d44288b38a01350d38fd65",
