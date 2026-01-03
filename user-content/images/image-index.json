@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 29,
-  "generatedDate": "2026-01-03T19:27:47.972Z",
+  "totalImages": 30,
+  "generatedDate": "2026-01-03T19:28:17.284Z",
   "images": [
+    {
+      "id": "ec21a158eb0b46c98134e5a45371b7b8",
+      "filename": "Guardian.png",
+      "name": "Guardian",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/ec21a158eb0b46c98134e5a45371b7b8.png",
+      "webpPath": "user-content/images/characters/2026/01/ec21a158eb0b46c98134e5a45371b7b8.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 12870,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T19:27:58.393Z",
+      "format": "png"
+    },
     {
       "id": "eeeeb666d21b4eda8cf3b4dd4fb66fe3",
       "filename": "Champion.png",
@@ -538,6 +556,7 @@
   ],
   "byCategory": {
     "characters": [
+      "ec21a158eb0b46c98134e5a45371b7b8",
       "eeeeb666d21b4eda8cf3b4dd4fb66fe3",
       "224e31c0035d4900886ebe1a6f470d49",
       "08ae3459ac9a4291a3d63143a3ce12b0",
