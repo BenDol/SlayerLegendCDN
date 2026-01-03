@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 26,
-  "generatedDate": "2026-01-03T07:57:50.303Z",
+  "totalImages": 27,
+  "generatedDate": "2026-01-03T07:58:14.939Z",
   "images": [
+    {
+      "id": "08ae3459ac9a4291a3d63143a3ce12b0",
+      "filename": "Weapon Master.png",
+      "name": "Weapon Master",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/08ae3459ac9a4291a3d63143a3ce12b0.png",
+      "webpPath": "user-content/images/characters/2026/01/08ae3459ac9a4291a3d63143a3ce12b0.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 12937,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T07:58:00.089Z",
+      "format": "png"
+    },
     {
       "id": "2a8582d768bc454095d4de346968ce52",
       "filename": "Crusader.png",
@@ -484,6 +502,7 @@
   ],
   "byCategory": {
     "characters": [
+      "08ae3459ac9a4291a3d63143a3ce12b0",
       "2a8582d768bc454095d4de346968ce52",
       "f7fabde6febe41ccbcb99cfa43345175",
       "21f821c4fc414840997d7f687e0ae710",
