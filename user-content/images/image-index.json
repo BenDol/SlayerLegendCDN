@@ -1,8 +1,80 @@
 {
   "version": "1.0",
-  "totalImages": 30,
-  "generatedDate": "2026-01-03T19:28:17.284Z",
+  "totalImages": 34,
+  "generatedDate": "2026-01-03T19:33:56.479Z",
   "images": [
+    {
+      "id": "03a1af75f975429d999cd9a7fd926b71",
+      "filename": "Blast.png",
+      "name": "Blast",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/03a1af75f975429d999cd9a7fd926b71.png",
+      "webpPath": "user-content/images/characters/2026/01/03a1af75f975429d999cd9a7fd926b71.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 11768,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T19:33:43.720Z",
+      "format": "png"
+    },
+    {
+      "id": "e1ab16b3c70841f4819b10070bef9df2",
+      "filename": "Dark Rain.png",
+      "name": "Dark Rain",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/e1ab16b3c70841f4819b10070bef9df2.png",
+      "webpPath": "user-content/images/characters/2026/01/e1ab16b3c70841f4819b10070bef9df2.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 13128,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T19:33:29.949Z",
+      "format": "png"
+    },
+    {
+      "id": "2f4995edfda84d7395849e01643f4f7e",
+      "filename": "Warlord.png",
+      "name": "Warlord",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/2f4995edfda84d7395849e01643f4f7e.png",
+      "webpPath": "user-content/images/characters/2026/01/2f4995edfda84d7395849e01643f4f7e.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 11912,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T19:33:16.772Z",
+      "format": "png"
+    },
+    {
+      "id": "644af91e934b45bc84df700551a626e8",
+      "filename": "Dark Knight.png",
+      "name": "Dark Knight",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/644af91e934b45bc84df700551a626e8.png",
+      "webpPath": "user-content/images/characters/2026/01/644af91e934b45bc84df700551a626e8.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 9498,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-03T19:33:03.777Z",
+      "format": "png"
+    },
     {
       "id": "ec21a158eb0b46c98134e5a45371b7b8",
       "filename": "Guardian.png",
@@ -556,6 +628,10 @@
   ],
   "byCategory": {
     "characters": [
+      "03a1af75f975429d999cd9a7fd926b71",
+      "e1ab16b3c70841f4819b10070bef9df2",
+      "2f4995edfda84d7395849e01643f4f7e",
+      "644af91e934b45bc84df700551a626e8",
       "ec21a158eb0b46c98134e5a45371b7b8",
       "eeeeb666d21b4eda8cf3b4dd4fb66fe3",
       "224e31c0035d4900886ebe1a6f470d49",
