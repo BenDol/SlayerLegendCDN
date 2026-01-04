@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 39,
-  "generatedDate": "2026-01-04T03:01:49.875Z",
+  "totalImages": 40,
+  "generatedDate": "2026-01-04T03:06:07.619Z",
   "images": [
+    {
+      "id": "d6e36689ac3a4473befc0dafec37224a",
+      "filename": "Memory Tree.png",
+      "name": "Memory Tree",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/d6e36689ac3a4473befc0dafec37224a.png",
+      "webpPath": "user-content/images/characters/2026/01/d6e36689ac3a4473befc0dafec37224a.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 547,
+        "height": 892
+      },
+      "filesize": 342491,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-04T03:05:55.390Z",
+      "format": "png"
+    },
     {
       "id": "0d56a0e813ef4d4794b0f719473e88d5",
       "filename": "Memory Essence.png",
@@ -718,6 +736,7 @@
   ],
   "byCategory": {
     "characters": [
+      "d6e36689ac3a4473befc0dafec37224a",
       "0d56a0e813ef4d4794b0f719473e88d5",
       "6bbde1f7743d434ea5743cba0564a616",
       "29dcff08469f456c943a26b5510ecade",
