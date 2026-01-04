@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 34,
-  "generatedDate": "2026-01-03T19:33:56.479Z",
+  "totalImages": 35,
+  "generatedDate": "2026-01-04T02:17:16.837Z",
   "images": [
+    {
+      "id": "655a227ecb9e4ee9b9089e4d3a4c82fa",
+      "filename": "Tera.webp",
+      "name": "Tera",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/655a227ecb9e4ee9b9089e4d3a4c82fa.webp",
+      "webpPath": "user-content/images/characters/2026/01/655a227ecb9e4ee9b9089e4d3a4c82fa.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "filesize": 2212,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-04T02:16:55.787Z",
+      "format": "webp"
+    },
     {
       "id": "03a1af75f975429d999cd9a7fd926b71",
       "filename": "Blast.png",
@@ -628,6 +646,7 @@
   ],
   "byCategory": {
     "characters": [
+      "655a227ecb9e4ee9b9089e4d3a4c82fa",
       "03a1af75f975429d999cd9a7fd926b71",
       "e1ab16b3c70841f4819b10070bef9df2",
       "2f4995edfda84d7395849e01643f4f7e",
