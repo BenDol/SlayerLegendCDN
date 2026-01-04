@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 37,
-  "generatedDate": "2026-01-04T02:33:48.111Z",
+  "totalImages": 38,
+  "generatedDate": "2026-01-04T02:37:23.702Z",
   "images": [
+    {
+      "id": "6bbde1f7743d434ea5743cba0564a616",
+      "filename": "Nova.png",
+      "name": "Nova",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/6bbde1f7743d434ea5743cba0564a616.png",
+      "webpPath": "user-content/images/characters/2026/01/6bbde1f7743d434ea5743cba0564a616.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "filesize": 701662,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-04T02:37:07.280Z",
+      "format": "png"
+    },
     {
       "id": "29dcff08469f456c943a26b5510ecade",
       "filename": "Seed.png",
@@ -682,6 +700,7 @@
   ],
   "byCategory": {
     "characters": [
+      "6bbde1f7743d434ea5743cba0564a616",
       "29dcff08469f456c943a26b5510ecade",
       "c0ea0246772541f198bfe54bd3b212b3",
       "655a227ecb9e4ee9b9089e4d3a4c82fa",
