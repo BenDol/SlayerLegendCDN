@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 35,
-  "generatedDate": "2026-01-04T02:17:16.837Z",
+  "totalImages": 36,
+  "generatedDate": "2026-01-04T02:32:12.780Z",
   "images": [
+    {
+      "id": "c0ea0246772541f198bfe54bd3b212b3",
+      "filename": "Tera.png",
+      "name": "Tera",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/c0ea0246772541f198bfe54bd3b212b3.png",
+      "webpPath": "user-content/images/characters/2026/01/c0ea0246772541f198bfe54bd3b212b3.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "filesize": 637197,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-04T02:31:56.896Z",
+      "format": "png"
+    },
     {
       "id": "655a227ecb9e4ee9b9089e4d3a4c82fa",
       "filename": "Tera.webp",
@@ -646,6 +664,7 @@
   ],
   "byCategory": {
     "characters": [
+      "c0ea0246772541f198bfe54bd3b212b3",
       "655a227ecb9e4ee9b9089e4d3a4c82fa",
       "03a1af75f975429d999cd9a7fd926b71",
       "e1ab16b3c70841f4819b10070bef9df2",
