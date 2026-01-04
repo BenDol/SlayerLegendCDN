@@ -1,8 +1,26 @@
 {
   "version": "1.0",
-  "totalImages": 40,
-  "generatedDate": "2026-01-04T03:06:07.619Z",
+  "totalImages": 41,
+  "generatedDate": "2026-01-04T03:06:31.147Z",
   "images": [
+    {
+      "id": "668b174b64834dda8037592214273210",
+      "filename": "Memory Tree 2.png",
+      "name": "Memory Tree 2",
+      "description": "",
+      "path": "user-content/images/characters/2026/01/668b174b64834dda8037592214273210.png",
+      "webpPath": "user-content/images/characters/2026/01/668b174b64834dda8037592214273210.webp",
+      "category": "characters",
+      "tags": [],
+      "dimensions": {
+        "width": 546,
+        "height": 912
+      },
+      "filesize": 250435,
+      "uploadedBy": "andyluc",
+      "uploadDate": "2026-01-04T03:06:14.172Z",
+      "format": "png"
+    },
     {
       "id": "d6e36689ac3a4473befc0dafec37224a",
       "filename": "Memory Tree.png",
@@ -736,6 +754,7 @@
   ],
   "byCategory": {
     "characters": [
+      "668b174b64834dda8037592214273210",
       "d6e36689ac3a4473befc0dafec37224a",
       "0d56a0e813ef4d4794b0f719473e88d5",
       "6bbde1f7743d434ea5743cba0564a616",
